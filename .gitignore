@@ -3,3 +3,4 @@ install
 run
 analysis/diffs
 analysis/plots
+run*
