@@ -4,9 +4,9 @@
 	branch = main
 [submodule "src/LISF"]
 	path = src/LISF
-	url = https://github.com/NASA-LIS/LISF.git
+	url = https://github.com/esmf-org/LISF.git
 	branch = master
 [submodule "src/parflow"]
 	path = src/parflow
-	url = https://github.com/parflow/parflow.git
+	url = https://github.com/esmf-org/parflow.git
 	branch = master

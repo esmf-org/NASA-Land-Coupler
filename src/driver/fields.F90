@@ -40,9 +40,11 @@ module Fields
     character(len=64) :: standardName2 = "dummy2"
   end type med_fld_syn_type
 
-  type(med_fld_type),target,dimension(21) :: fldsFrLnd = (/&
+  type(med_fld_type),target,dimension(22) :: fldsFrLnd = (/&
     med_fld_type("bare_soil_evaporation"                   ,"edir"    ,&
                  "W m-2",FLD_REMAP_BILINR,FLD_MASK_NNE,0),&
+    med_fld_type("ground_water_storage"                    ,"wa"         ,&
+                 "mm",FLD_REMAP_BILINR,FLD_MASK_NNE,0),&
     med_fld_type("liquid_fraction_of_soil_moisture_layer_1","smliqfracl1",&
                  "-",FLD_REMAP_BILINR,FLD_MASK_NNE,1),&
     med_fld_type("liquid_fraction_of_soil_moisture_layer_2","smliqfracl2",&
@@ -206,7 +208,17 @@ module Fields
     med_fld_type("soil_moisture_fraction_layer_4"          ,"smfracl4"   ,&
                  "-",FLD_REMAP_BILINR,FLD_MASK_NNE,1)/)
 
-  type(med_fld_type),target,dimension(4) :: fldsToGwr = (/&
+  type(med_fld_type),target,dimension(9) :: fldsToGwr = (/&
+    med_fld_type("ground_water_storage"                    ,"wa"         ,&
+                 "mm",FLD_REMAP_BILINR,FLD_MASK_NNE,0),&
+    med_fld_type("soil_moisture_fraction_layer_1"          ,"smfracl1"   ,&
+                 "-",FLD_REMAP_BILINR,FLD_MASK_NNE,1),&
+    med_fld_type("soil_moisture_fraction_layer_2"          ,"smfracl2"   ,&
+                 "-",FLD_REMAP_BILINR,FLD_MASK_NNE,1),&
+    med_fld_type("soil_moisture_fraction_layer_3"          ,"smfracl3"   ,&
+                 "-",FLD_REMAP_BILINR,FLD_MASK_NNE,1),&
+    med_fld_type("soil_moisture_fraction_layer_4"          ,"smfracl4"   ,&
+                 "-",FLD_REMAP_BILINR,FLD_MASK_NNE,1),&
     med_fld_type("total_water_flux_layer_1"                ,"wtrflx1"    ,&
                  "kg m-2 s-1",FLD_REMAP_BILINR,FLD_MASK_NNE,0),&
     med_fld_type("total_water_flux_layer_2"                ,"wtrflx2"    ,&
